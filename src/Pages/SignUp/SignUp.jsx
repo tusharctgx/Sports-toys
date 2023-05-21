@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 
 
@@ -7,8 +7,12 @@ import { AuthContext } from "../../Providers/AuthProvider";
 const SignUp = () => {
   const{createUser} = useContext(AuthContext)
 
+  const navigate = useNavigate();
+
 
   const handleSignUp = event => {
+
+
     event.preventDefault();
     const form = event.target;
     const name = form.name.value;
@@ -19,10 +23,14 @@ const SignUp = () => {
     createUser(email, password)
     .then(result => {
       const user = result.user;
-      console.log(user)
+      console.log(user);
+      navigate('/');
     }) 
     .catch(error => console.log(error))
   }
+
+
+  
   return (
     <div className="hero min-h-screen bg-base-200">
     <div className="hero-content flex-col ">
@@ -37,7 +45,7 @@ const SignUp = () => {
             <label className="label">
               <span className="label-text">Name</span>
             </label>
-            <input type="text" placeholder="Name" name="Name" className="input input-bordered" />
+            <input type="text" placeholder="Name" name="name" className="input input-bordered" />
           </div>
           <div className="form-control">
             <label className="label">
@@ -61,7 +69,7 @@ const SignUp = () => {
             </label>
           </div>
           <div className="form-control mt-6">
-            <button className="btn btn-primary">Sign Up</button>
+            <button  className="btn btn-primary">Sign Up</button>
           </div>
           </form>
           <p className="my-4 text-center">Already Haven a Account?<Link className="font-bold text-cyan-600" to="/login">Login</Link></p>
