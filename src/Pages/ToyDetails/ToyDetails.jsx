@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { useLoaderData, useParams } from "react-router-dom";
+
+import { useLoaderData, } from "react-router-dom";
 
 const ToyDetails = () => {
  
@@ -8,7 +8,7 @@ const ToyDetails = () => {
  console.log(Url,name,Seller,Category,Email,Price,Rating,Quantity,Details);
 
   // useEffect(() => {
-  //   fetch(`http://localhost:5000/toyscollection/${_id}`)
+  //   fetch(`https://sports-toys-server-xi.vercel.app/toyscollection/${_id}`)
   //   .then((res) => res.json())
   //   .then((data) => setAllDetails(data))
   // }, []);

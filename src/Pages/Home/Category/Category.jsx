@@ -3,17 +3,17 @@ import { Link } from "react-router-dom";
 
 const Category = () => {
   const [alltoysdata, setAllToysdata] = useState([]);
-  const [items, setItems] = useState();
+  // const [items, setItems] = useState();
 
   const filterItem = (categItem) => {
     const updateItems = Menu.filter((curElem) => {
       return curElem.category === categItem
     });
-    setItems(updateItems);
+    setAllToysdata(updateItems);
   }
 
   useEffect(() => {
-    fetch("http://localhost:5000/toyscollection")
+    fetch("https://sports-toys-server-xi.vercel.app/toyscollection")
       .then((res) => res.json())
       .then((data) => setAllToysdata(data));
   }, []);

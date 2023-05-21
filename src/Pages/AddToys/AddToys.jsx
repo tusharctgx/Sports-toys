@@ -17,7 +17,7 @@ const AddToys = () => {
     event.preventDefault();
     const addDetails = {name,Url,Seller,Email,Price,Rating,Quantity,Category,Details}
     console.log(addDetails);
-    fetch("http://localhost:5000/addtoys", {
+    fetch("https://sports-toys-server-xi.vercel.app/addtoys", {
       method: "POST",
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify(addDetails)
