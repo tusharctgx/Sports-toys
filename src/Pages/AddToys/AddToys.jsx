@@ -15,6 +15,7 @@ const AddToys = () => {
 
    const handleSubmit = (event) => {
     event.preventDefault();
+    
     const addDetails = {name,Url,Seller,Email,Price,Rating,Quantity,Category,Details}
     console.log(addDetails);
     fetch("https://sports-toys-server-xi.vercel.app/addtoys", {
@@ -26,6 +27,7 @@ const AddToys = () => {
     .then((res) => res.json)
     .then((data) => {
       console.log(data);
+      
       
     })
     
@@ -40,7 +42,7 @@ const AddToys = () => {
     <div className=" grid lg:grid-cols-3 gap-4 content-center mb-10 ">
     <div>
       <h1 className="mb-5 font-bold text-2xl">TOY NAME</h1>
-    <input onChange={(e) => setName(e.target.value)} type="toyname" placeholder="Type here"  className="input input-bordered w-full max-w-xl" />
+    <input onChange={(e) => setName(e.target.value)} type="toyname" placeholder="Type here"  className="input input-bordered w-full max-w-xl"  />
     </div>
     <div>
       <h1 className="mb-5 font-bold text-2xl">PICTURE URL</h1>
